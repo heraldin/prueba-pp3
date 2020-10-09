@@ -28,34 +28,40 @@
             </div>
             <div class="col s12">
                 <div class="col s8">
-                    <div class="card blue-grey lighten-3">
-                        <table>
-                            <tr>
-                                <th>Id</th>
-                                <th>Producto</th>
-                                <th>Cliente</th>
-                                <th>Iva</th>
-                                <th>Cantidad</th>
-                                <th>Subtotal</th>
-                                <th>Total</th>
-                                <th>Tipo-pago</th>
-                                <th>Accion</th>
-                            </tr>
-                            <tr v-for="factura of lista_facturas">
-                                <td>{{ factura.id_factura }}</td>
-                                <td>{{ factura.nombre_producto }}</td>
-                                <td>{{ factura.nombre_cliente }}</td>
-                                <td>{{ factura.iva }}</td>
-                                <td>{{ factura.cantidad }}</td>
-                                <td>{{ factura.subtotal }}</td>
-                                <td>{{ factura.total }}</td>
-                                <td>{{ factura.forma_pago }}</td>
-                                <td>
-                                    <a v-on:click="eliminarFactura(factura.id_factura)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a>
-                                    <a v-on:click="editarFactura(factura.id_factura,factura.nombre_producto,factura.nombre_cliente,factura.iva,factura.cantidad,factura.subtotal,factura.total,factura.forma_pago)" class="btn-floating btn-small waves-effect waves-light deep-purple"><i class="material-icons">edit</i></a>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="card-panel">
+                        <nav>
+                            <div class="nav-wrapper deep-purple">
+                                <a href="#!" class="brand-logo center"><i class="material-icons"></i>FACTURAS</a>                            </div>
+                        </nav>
+                        <div class="card blue-grey lighten-3">
+                            <table>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Producto</th>
+                                    <th>Cliente</th>
+                                    <th>Iva</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th>Total</th>
+                                    <th>Tipo-pago</th>
+                                    <th>Accion</th>
+                                </tr>
+                                <tr v-for="factura of lista_facturas">
+                                    <td>{{ factura.id_factura }}</td>
+                                    <td>{{ factura.nombre_producto }}</td>
+                                    <td>{{ factura.nombre_cliente }}</td>
+                                    <td>{{ factura.iva }}</td>
+                                    <td>{{ factura.cantidad }}</td>
+                                    <td>{{ factura.subtotal }}</td>
+                                    <td>{{ factura.total }}</td>
+                                    <td>{{ factura.forma_pago }}</td>
+                                    <td>
+                                        <a v-on:click="eliminarFactura(factura.id_factura)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a>
+                                        <a v-on:click="editarFactura(factura.id_factura,factura.nombre_producto,factura.nombre_cliente,factura.iva,factura.cantidad,factura.subtotal,factura.total,factura.forma_pago)" class="btn-floating btn-small waves-effect waves-light deep-purple"><i class="material-icons">edit</i></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -73,6 +79,7 @@
                         <br>
 
                         <div class="row">
+                            
                             <div class="input-field s12">
                                 <input type="text" v-model="nombre_producto" placeholder="Ingrese aqui">
                                 <label>Nombre producto</label>
